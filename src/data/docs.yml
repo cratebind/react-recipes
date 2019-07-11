@@ -4,3 +4,4 @@
 - section: Forms
   paths:
     - /docs/dynamic-fields
+    - /docs/form-with-feedback

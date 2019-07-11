@@ -146,6 +146,8 @@ const { Compiler: renderAst } = new RehypeReact({
 });
 
 export default function Docs({ data, pageContext }: DocsProps) {
+  console.log({ data, pageContext });
+  if (data === undefined) return null;
   const {
     markdownRemark: { title, htmlAst, excerpt }
   } = data;

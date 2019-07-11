@@ -1,6 +1,6 @@
 // TODO: Refactor this mess
 import * as React from "react";
-import { Link } from "gatsby";
+import { Link, graphql } from "gatsby";
 import { css } from "emotion";
 import { Button } from "reakit";
 import { FiGithub } from "react-icons/fi";

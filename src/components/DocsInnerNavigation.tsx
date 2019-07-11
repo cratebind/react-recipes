@@ -165,25 +165,29 @@ export default function DocsInnerNavigation({
     <useCollectionContext.Provider>
       <useScrollSpyContext.Provider>
         <div className={className} key={title}>
-          <Button
+          <a
             as="a"
             href={sourceUrl}
             unstable_system={{ fill: "outline" }}
             onClick={track("reakit.sectionSourceClick")}
+            role="button"
+            className="btn btn-primary"
           >
             <FaGithub />
             <Spacer width={8} /> View on GitHub
-          </Button>
-          <Button
+          </a>
+          <a
             as="a"
             href={readmeUrl}
             unstable_system={{ fill: "outline" }}
             onClick={track("reakit.sectionMarkdownClick")}
+            role="button"
+            className="btn btn-primary"
           >
             <FaEdit />
             <Spacer width={8} />
             Edit this page
-          </Button>
+          </a>
           <div hidden id={id}>
             {title} sections
           </div>

@@ -123,15 +123,13 @@ export default function DocsNavigation() {
   // const getIsExperimental = (path: string) =>
   //   Boolean(findMeta(path).frontmatter.experimental);
 
-  console.log(data);
-
   return (
     <div className={className}>
       {data.allDocsYaml.nodes.map(node => (
         <nav key={node.section} aria-labelledby={getId(node.section)}>
           <h3 id={getId(node.section)}>{node.section}</h3>
           <ul>
-            {node.paths.map(path => console.log(path) || console.log(findMeta(path)) || (
+            {node.paths.map(path => (
               <li key={path}>
                 <Link to={path}>{getTitle(path)}</Link>
                 {/* <Link to={path}>{title}</Link> */}

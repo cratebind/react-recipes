@@ -75,9 +75,11 @@ function Example() {
 
       {error && <div className="error">{error}</div>}
 
+    <div>
       <button type="submit" isActive onClick={() => console.log("")}>
-        CONTINUE
+        Submit
       </button>
+    </div>
 
       {success !== null && <div className="success">{success}</div>}
     </form>

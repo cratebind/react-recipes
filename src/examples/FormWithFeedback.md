@@ -65,81 +65,51 @@ function Example() {
 
   return (
     <form onSubmit={handleSubmit}>
-      {/* TODO: Change this to just be the button if the user is authenticated */}
-      <label htmlFor="email">
-        Enter your email address to be notified when this item is back in stock.
-        <input
-          type="email"
-          placeholder="Email Address"
-          onChange={e =>
-            dispatch({
+      <div className="form-group">
+        <label htmlFor="email">
+          <div>
+            Enter your email address to be notified
+          </div>
+          <input
+            type="email"
+            placeholder="Email Address"
+            onChange={e =>
+              dispatch({
+                type: 'UPDATE_FIELD',
+                payload: {
+                  field: 'email', value: e.target.value,
+                },
+              })}
+            value={email}
+            id="email"
+          />
+        </label>
+      </div>
+      <div className="form-check">
+        <label htmlFor="opt-in">
+          <input
+            type="checkbox"
+            checked={optIn}
+            id="opt-in"
+            name="opt-in"
+            className="form-check-input"
+            onChange={e => dispatch({
               type: 'UPDATE_FIELD',
               payload: {
-                field: 'email', value: e.target.value,
+                field: 'optIn',
+                value: e.target.checked,
               },
             })}
-          value={email}
-          id="email"
-        />
-      </label>
-      <label htmlFor="opt-in">
-        <input
-          type="checkbox"
-          checked={optIn}
-          id="opt-in"
-          name="opt-in"
-          onChange={e => dispatch({
-            type: 'UPDATE_FIELD',
-            payload: {
-              field: 'optIn',
-              value: e.target.checked,
-            },
-          })}
-        /> Opt-in to receive marketing emails from Foxcroft
-      </label>
+          /> Opt-in to receive marketing emails
+        </label>
+      </div>
       {success && (
         <div className="success-message">Great! You'll be notified when this product is back in stock.</div>
       )}
       {error !== null && (
         <div className="error-message">{error}</div>
       )}
-      <button type="submit" disabled={loading}>{loading ? 'Submitting' : 'Notify Me'}</button>
-      <style jsx>{`
-        button {
-          font-size: 1.3rem;
-          height: auto;
-          line-height: auto;
-          margin-bottom: 20px;
-          padding: 15px;
-        }
-
-        label {
-          display: block;
-        }
-
-        label::after {
-          display: none;
-        }
-
-        input[type="email"] {
-          margin-top: 10px;
-        }
-
-        input[type="checkbox"] {
-          margin-left: 0;
-          margin-bottom: 15px;
-        }
-
-        .success-message {
-          color: green;
-          margin-bottom: 10px;
-        }
-
-        .error-message {
-          color: red;
-          margin-bottom: 10px;
-        }
-      `}</style>
+      <button type="submit" className="btn btn-primary" disabled={loading}>{loading ? 'Submitting' : 'Notify Me'}</button>
     </form>
   );
 };

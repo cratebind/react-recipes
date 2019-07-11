@@ -165,7 +165,7 @@ export default function Header() {
         </Anchor>
         <div style={{ flex: 1 }} />
         <Anchor
-          href="https://github.com/reakit/reakit"
+          href="https://github.com/cratebind/react-recipes"
           onClick={track("reakit.headerGithubClick")}
         >
           <FaGithub style={{ fontSize: "1.2em" }} />

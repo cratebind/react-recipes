@@ -16,15 +16,13 @@ import Accessible from "../icons/Accessible";
 import Composable from "../icons/Composable";
 import Customizable from "../icons/Customizable";
 import TinyFast from "../icons/TinyFast";
-// import HomePlayground from "../components/HomePlayground";
 import track from "../utils/track";
-import NewsletterForm from "../components/NewsletterForm";
 import Docs from "../templates/Docs";
 
 function useGitHubStars() {
   const [stars, setStars] = React.useState<number | null>(null);
   React.useEffect(() => {
-    fetch("https://api.github.com/repos/reakit/reakit")
+    fetch("https://api.github.com/repos/cratebind/react-recipes")
       .then(result => result.json())
       .then(response => setStars(response.stargazers_count));
   }, []);
@@ -172,7 +170,7 @@ function IndexPage() {
               `}
             >
               <a
-                href="https://github.com/reakit/reakit"
+                href="https://github.com/cratebind/react-recipes"
                 onClick={track("reakit.heroGithubClick")}
               >
                 <FiGithub />
@@ -181,7 +179,7 @@ function IndexPage() {
               </a>
               {stars && (
                 <a
-                  href="https://github.com/reakit/reakit/stargazers"
+                  href="https://github.com/cratebind/react-recipes/stargazers"
                   onClick={track("reakit.heroStarsClick")}
                 >
                   <MdStar />

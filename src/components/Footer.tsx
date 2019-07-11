@@ -49,7 +49,7 @@ export default function Footer() {
         `}
       >
         <Anchor
-          href="https://github.com/cratebind"
+          href="https://github.com/cratebind/react-recipes"
           target="_blank"
           onClick={track("reakit.footerGithubClick")}
         >

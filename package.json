@@ -4,11 +4,11 @@
   "private": true,
   "description": "React Recipes and Examples For Cratebind",
   "license": "MIT",
-  "repository": "https://github.com/cratebind",
+  "repository": "https://github.com/cratebind/react-recipes",
   "author": {
     "name": "Matt Wood",
     "email": "matt@cratebind.com",
-    "url": "https://github.com/mattfwood"
+    "url": "https://github.com/cratebind/react-recipes"
   },
   "scripts": {
     "start": "npm run develop",

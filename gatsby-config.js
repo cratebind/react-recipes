@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: "Cratebind React Recipes",
     author: "Cratebind",
-    siteUrl: process.env.URL || "https://cratebind.com",
+    siteUrl: process.env.URL || "https://cratebind-react-recipes.netlify.com/",
     description:
       "React Recipes and Examples For Cratebind"
   },

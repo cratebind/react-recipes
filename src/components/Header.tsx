@@ -16,7 +16,6 @@ import { MdMenu } from "react-icons/md";
 import { usePalette, useFade } from "reakit-system-palette/utils";
 import { LinkGetProps } from "@reach/router";
 import Logo from "../icons/Logo";
-import SpectrumLogo from "../icons/Spectrum";
 import useViewportWidthGreaterThan from "../hooks/useViewportWidthGreaterThan";
 import useLocation from "../hooks/useLocation";
 import track from "../utils/track";
@@ -25,10 +24,8 @@ import SkipToContent from "./SkipToContent";
 import Spacer from "./Spacer";
 import HiddenMediaQuery from "./HiddenMediaQuery";
 import DocsNavigation from "./DocsNavigation";
+import Heading from "./Heading";
 
-export type HeaderProps = {
-  transparent?: boolean;
-};
 
 function getLinkProps({ isPartiallyCurrent }: LinkGetProps) {
   if (isPartiallyCurrent) {
@@ -37,7 +34,7 @@ function getLinkProps({ isPartiallyCurrent }: LinkGetProps) {
   return {};
 }
 
-export default function Header({ transparent }: HeaderProps) {
+export default function Header() {
   const ref = React.useRef<HTMLDivElement>(null);
   const isLarge = useViewportWidthGreaterThan(768);
   const background = usePalette("background");
@@ -46,6 +43,7 @@ export default function Header({ transparent }: HeaderProps) {
   const boxShadowColor = useFade(foreground, 0.85);
   const dialog = useDialogState({ unstable_animated: true });
   const location = useLocation();
+  const transparent = false;
 
   React.useEffect(dialog.hide, [location.pathname]);
 
@@ -67,12 +65,6 @@ export default function Header({ transparent }: HeaderProps) {
           will-change: background, transform;
           transition: transform 250ms ease-in-out;
           ${!transparent && `box-shadow: 0 1px 2px ${boxShadowColor}`};
-          ${transparent &&
-            css`
-              background: transparent;
-              color: white;
-              transform: translateY(32px);
-            `};
 
           & > *:not(:last-child) {
             margin-right: 16px;
@@ -168,51 +160,16 @@ export default function Header({ transparent }: HeaderProps) {
         </HiddenMediaQuery>
         <Anchor as={Link} to="/">
           <Logo colored={!transparent} />
-          <VisuallyHidden>Reakit</VisuallyHidden>
+          <Heading as="h2" style={{ textTransform: 'capitalize', marginLeft: 10 }}>Cratebind React Recipes</Heading>
+          <VisuallyHidden>Cratebind</VisuallyHidden>
         </Anchor>
         <div style={{ flex: 1 }} />
-        <HiddenMediaQuery query="max-width: 768px">
-          {props => (
-            <>
-              <Anchor
-                as={Link}
-                to="/docs/"
-                getProps={getLinkProps}
-                {...props}
-                onClick={track("reakit.headerGuideClick")}
-              >
-                Documentation
-              </Anchor>
-              <Anchor
-                as={Link}
-                to="/news/"
-                {...props}
-                onClick={track("reakit.headerNewsletterClick")}
-              >
-                Newsletter
-              </Anchor>
-              <Anchor
-                href="https://spectrum.chat/reakit"
-                onClick={track("reakit.headerSpectrumClick")}
-              >
-                <SpectrumLogo />
-                <HiddenMediaQuery query="max-width: 768px">
-                  <Spacer width={8} />
-                  Spectrum
-                </HiddenMediaQuery>
-              </Anchor>
-            </>
-          )}
-        </HiddenMediaQuery>
         <Anchor
           href="https://github.com/reakit/reakit"
           onClick={track("reakit.headerGithubClick")}
         >
           <FaGithub style={{ fontSize: "1.2em" }} />
-          <HiddenMediaQuery query="max-width: 768px">
-            <Spacer width={8} />
-            GitHub
-          </HiddenMediaQuery>
+          <VisuallyHidden>GitHub</VisuallyHidden>
           {!isLarge && <VisuallyHidden>GitHub</VisuallyHidden>}
         </Anchor>
       </header>

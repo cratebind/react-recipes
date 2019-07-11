@@ -49,44 +49,12 @@ export default function Footer() {
         `}
       >
         <Anchor
-          href="https://facebook.com/reakitjs"
-          target="_blank"
-          onClick={track("reakit.footerFacebookClick")}
-        >
-          <FaFacebook />
-          <VisuallyHidden>Facebook</VisuallyHidden>
-        </Anchor>
-        <Anchor
-          href="https://twitter.com/reakitjs"
-          target="_blank"
-          onClick={track("reakit.footerTwitterClick")}
-        >
-          <FaTwitter />
-          <VisuallyHidden>Twitter</VisuallyHidden>
-        </Anchor>
-        <Anchor
-          href="https://github.com/reakit/reakit"
+          href="https://github.com/cratebind"
           target="_blank"
           onClick={track("reakit.footerGithubClick")}
         >
           <FaGithub />
           <VisuallyHidden>GitHub</VisuallyHidden>
-        </Anchor>
-        <Anchor
-          href="https://stackoverflow.com/questions/tagged/reakit"
-          target="_blank"
-          onClick={track("reakit.footerStackoverflowClick")}
-        >
-          <FaStackOverflow />
-          <VisuallyHidden>Stackoverflow</VisuallyHidden>
-        </Anchor>
-        <Anchor
-          href="https://spectrum.chat/reakit"
-          target="_blank"
-          onClick={track("reakit.footerSpectrumClick")}
-        >
-          <SpectrumLogo />
-          <VisuallyHidden>Spectrum</VisuallyHidden>
         </Anchor>
       </div>
       <Paragraph>
@@ -94,10 +62,6 @@ export default function Footer() {
         <Anchor href="https://opensource.org/licenses/MIT" target="_blank">
           MIT License
         </Anchor>
-      </Paragraph>
-      <Paragraph>
-        Copyright © 2017-
-        {year} Diego Haz
       </Paragraph>
     </footer>
   );

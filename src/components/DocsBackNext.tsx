@@ -72,12 +72,13 @@ export default function DocsBackNext({
   const findMeta = (path: string) =>
     data.allMarkdownRemark.nodes.find(node => node.frontmatter.path === path)!;
   const getTitle = (path: string) => findMeta(path).title;
+
   return (
     <div className={className}>
       <nav>
         <Separator orientation="horizontal" />
         <ul>
-          {prevPath && (
+          {prevPath && prevPath !== '/docs/get-started/' && (
             <li>
               <Link to={prevPath}>
                 <VisuallyHidden>Previous </VisuallyHidden>

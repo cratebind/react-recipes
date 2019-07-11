@@ -19,6 +19,7 @@ import TinyFast from "../icons/TinyFast";
 // import HomePlayground from "../components/HomePlayground";
 import track from "../utils/track";
 import NewsletterForm from "../components/NewsletterForm";
+import Docs from "../templates/Docs";
 
 function useGitHubStars() {
   const [stars, setStars] = React.useState<number | null>(null);
@@ -30,7 +31,7 @@ function useGitHubStars() {
   return stars;
 }
 
-export default function IndexPage() {
+function IndexPage() {
   const stars = useGitHubStars();
   const link = usePalette("link");
   return (
@@ -298,3 +299,18 @@ export default function IndexPage() {
     </>
   );
 }
+
+export default Docs;
+
+export const pageQuery = graphql`
+  query($path: String!) {
+    markdownRemark(frontmatter: { path: { eq: $path } }) {
+      title
+      htmlAst
+      excerpt
+      frontmatter {
+        path
+      }
+    }
+  }
+`;

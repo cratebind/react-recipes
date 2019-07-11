@@ -131,7 +131,7 @@ export default function DocsNavigation() {
         <nav key={node.section} aria-labelledby={getId(node.section)}>
           <h3 id={getId(node.section)}>{node.section}</h3>
           <ul>
-            {node.paths.map(path => console.log(path) || (
+            {node.paths.map(path => console.log(path) || console.log(findMeta(path)) || (
               <li key={path}>
                 <Link to={path}>{getTitle(path)}</Link>
                 {/* <Link to={path}>{title}</Link> */}

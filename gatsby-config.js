@@ -1,10 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: "Reakit",
-    author: "@reakitjs",
-    siteUrl: process.env.URL || "https://reakit.io",
+    title: "Cratebind React Recipes",
+    author: "Cratebind",
+    siteUrl: process.env.URL || "https://cratebind.com",
     description:
-      "Low level component library for building accessible high level UI libraries, design systems and applications with React."
+      "React Recipes and Examples For Cratebind"
   },
   plugins: [
     "gatsby-plugin-react-helmet",
@@ -20,29 +20,15 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        name: "Reakit",
-        short_name: "Reakit",
-        start_url: "/",
+        name: "Cratebind React Recipes",
+        short_name: "Cratebind React Recipes",
+        start_url: "/docs/get-started",
         background_color: "#5640dd",
         theme_color: "#5640dd",
         display: "minimal-ui",
         icon: "src/images/icon.png" // This path is relative to the root of the site.
       }
     },
-    // {
-    //   resolve: "gatsby-source-filesystem",
-    //   options: {
-    //     name: "guide",
-    //     path: `${__dirname}/../../docs`
-    //   }
-    // },
-    // {
-    //   resolve: "gatsby-source-filesystem",
-    //   options: {
-    //     name: "components",
-    //     path: `${__dirname}/../reakit/src`
-    //   }
-    // },
     {
       resolve: "gatsby-source-filesystem",
       options: {

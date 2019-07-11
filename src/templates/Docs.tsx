@@ -149,6 +149,7 @@ export default function Docs({ data, pageContext }: DocsProps) {
   const {
     markdownRemark: { title, htmlAst, excerpt }
   } = data;
+  console.log(pageContext);
   const { nextPagePath, prevPagePath } = pageContext;
 
   return (

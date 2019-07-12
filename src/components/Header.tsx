@@ -160,7 +160,7 @@ export default function Header() {
         </HiddenMediaQuery>
         <Anchor as={Link} to="/">
           <Logo colored={!transparent} />
-          <Heading as="h2" style={{ textTransform: 'capitalize', marginLeft: 10 }}>React Recipes</Heading>
+          <Heading as="h2" style={{ textTransform: 'capitalize', marginLeft: 10, marginBottom: 0 }}>React Recipes</Heading>
           <VisuallyHidden>Cratebind</VisuallyHidden>
         </Anchor>
         <div style={{ flex: 1 }} />

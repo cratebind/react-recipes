@@ -132,7 +132,7 @@ function IndexPage() {
                 unstable_system={{ palette: "white" }}
                 onClick={track("reakit.heroGuideClick")}
               >
-                Get started
+                Get Started
               </Button>
               <Button
                 as={Link}

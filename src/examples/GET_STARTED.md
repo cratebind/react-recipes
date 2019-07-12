@@ -7,7 +7,7 @@ redirect_from:
 
 This recipe book is intended to provide helpful, reusable React patterns for common use cases.
 
-# Get started
+# Get Started
 
 To run locally, clone the repo and run:
 

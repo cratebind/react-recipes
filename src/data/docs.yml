@@ -7,3 +7,6 @@
     - /docs/form-with-feedback
     - /docs/edit-form
     - /docs/checkbox
+- section: Utilities
+  paths:
+    - /docs/network

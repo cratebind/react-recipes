@@ -12,6 +12,8 @@ import React, { Component } from 'react';
 class Example extends Component {
   constructor() {
     this.state = {
+      // usually you would want to set the initial state to `window.navigator.onLine`,
+      // but because of limitations with Gatsby we're assuming the user is online by default
       isOnline: true
     };
   }

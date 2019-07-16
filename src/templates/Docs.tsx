@@ -117,7 +117,6 @@ const { Compiler: renderAst } = new RehypeReact({
                   constate: createUseContext,
                   "react-spring": spring,
                   "./UniversalAccess": FaUniversalAccess,
-                  window,
                 }}
                 {...state}
               />

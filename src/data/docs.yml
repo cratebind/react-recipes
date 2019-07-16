@@ -1,12 +1,14 @@
 - section: Guide
   paths:
     - /
+- section: Inputs
+  paths:
+    - /docs/checkbox
 - section: Forms
   paths:
     - /docs/dynamic-fields
     - /docs/form-with-feedback
     - /docs/edit-form
-    - /docs/checkbox
 - section: Utilities
   paths:
     - /docs/network

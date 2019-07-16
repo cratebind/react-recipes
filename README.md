@@ -18,6 +18,8 @@ yarn install
 yarn start
 ```
 
+And go to [http://localhost:8000/](http://localhost:8000/)
+
 ## Adding Components
 
 Component pages are created from the `src/examples` directory using markdown files. You can use `src/examples/DynamicFields.md` as a template.

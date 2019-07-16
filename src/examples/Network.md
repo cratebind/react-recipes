@@ -12,7 +12,7 @@ import React, { Component } from 'react';
 class Example extends Component {
   constructor() {
     this.state = {
-      isOnline: navigator.onLine
+      isOnline: true
     };
   }
 

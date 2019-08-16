@@ -10,7 +10,7 @@ Accessible autocomplete examples.
 
 ## Usage
 
-### Standard dropdown search. 
+### Standard dropdown search
 
 ```jsx
 import React, { useState, useEffect } from 'react';
@@ -86,7 +86,7 @@ function Example() {
 ```
 
 
-### Autocomplete with keyboard accessible. 
+### Dropdown with keyboard accessibility
 
 ```jsx
 import React, { useState, useEffect } from 'react';
@@ -187,7 +187,7 @@ function Example() {
 }
 ```
 
-### Autocomplete with asynchronous information
+### Dropdown with asynchronous information
 
 ```jsx
 import React, { useState, useEffect } from 'react';
@@ -217,7 +217,7 @@ function Example() {
   // API to retrieve the information from the pokemon API
   // https://pokeapi.co/
   useEffect(() => {
-    fetch('https://pokeapi.co/api/v2/pokemon/?limit=20')
+    fetch('https://pokeapi.co/api/v2/pokemon/?limit=150')
       .then(function(response) {
         return response.json();
       })

@@ -51,7 +51,7 @@ label {
 ```
 
 
-### With Custom Chechbox
+### With Custom Checkbox
 ```jsx
 import React, { useState } from "react";
 

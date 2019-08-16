@@ -4,6 +4,7 @@
 - section: Inputs
   paths:
     - /docs/checkbox
+    - /docs/autocomplete
 - section: Forms
   paths:
     - /docs/dynamic-fields

@@ -44,15 +44,15 @@ const reducer = (state, action) => {
 function Example() {
   const [{ email, success, error, loading, optIn }, dispatch] = useReducer(reducer, { ...initialState });
 
-  async function handleSubmit (e) {
+  const handleSubmit = (e) => {
     e.preventDefault();
     try {
       dispatch({ type: 'START_SUBMIT' });
       // make your API request here
-      const res = await fetch('example.com');
-      const data = await res.json();
+      // const res = await fetch('example.com');
+      // const data = await res.json();
 
-      dispatch({ type: 'FINISH_SUBMIT', payload: data });
+      dispatch({ type: 'FINISH_SUBMIT', payload: { data: 'Success', } });
     } catch (err) {
       // fallback if server throws an unexpected exception
       dispatch({
@@ -106,12 +106,20 @@ function Example() {
         </label>
       </div>
       {success && (
-        <div className="success-message">You've been successfully signed up</div>
+        <div className="success-message">
+          You've been successfully signed up
+        </div>
       )}
       {error !== null && (
         <div className="error-message">{error}</div>
       )}
-      <button type="submit" className="btn btn-primary" disabled={loading}>{loading ? 'Submitting' : 'Submit'}</button>
+      <button
+        type="submit"
+        className="btn btn-primary"
+        disabled={loading}
+      >
+        {loading ? 'Submitting' : 'Submit'}
+      </button>
     </form>
   );
 };

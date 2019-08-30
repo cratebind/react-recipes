@@ -4,6 +4,9 @@
 - section: Inputs
   paths:
     - /docs/checkbox
+- section: Data Display
+  paths:
+    - /docs/map
 - section: Forms
   paths:
     - /docs/dynamic-fields

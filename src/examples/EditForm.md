@@ -22,8 +22,6 @@ const MyForm = () => {
   );
 };
 
-console.log(MyForm)
-
 function Example() {
   const [key, setKey] = useState('User 1');
   const options = ['User 1', 'User 2', 'User 3'];

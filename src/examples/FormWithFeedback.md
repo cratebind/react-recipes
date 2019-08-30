@@ -44,7 +44,7 @@ const reducer = (state, action) => {
 function Example() {
   const [{ email, success, error, loading, optIn }, dispatch] = useReducer(reducer, { ...initialState });
 
-  const handleSubmit = async (e) => {
+  async function handleSubmit (e) {
     e.preventDefault();
     try {
       dispatch({ type: 'START_SUBMIT' });

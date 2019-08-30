@@ -10,14 +10,12 @@ path: /docs/network
 import React, { Component } from 'react';
 
 class Example extends Component {
-  constructor() {
+  constructor(props) {
+    super(props);
     this.state = {
-      // usually you would want to set the initial state to `window.navigator.onLine`,
-      // but because of limitations with Gatsby we're assuming the user is online by default
       isOnline: true
-    };
+    }
   }
-
 
   componentDidMount() {
     window.addEventListener("online", () => this.handleNetworkChange(true));
@@ -49,4 +47,29 @@ class Example extends Component {
 
 ## Example With Hooks
 
-WIP
+```jsx
+import React, { useState, useEffect } from 'react';
+
+const Example = () => {
+  const [isOnline, setIsOnline] = useState(true);
+
+  useEffect(() => {
+    window.addEventListener("online", () => setIsOnline(true));
+    window.addEventListener("offline", () => setIsOnline(false));
+    return () => {
+      window.removeEventListener("online", () => setIsOnline(true));
+      window.removeEventListener("offline", () =>
+        setIsOnline(false)
+      );
+    }
+  }, [])
+
+  return (
+    <div className="App">
+      <h5>Current Status:</h5>
+      <h4>{isOnline ? "Online" : "Offline"}</h4>
+      <small>(Disconnect / Connect from network to update)</small>
+    </div>
+  )
+}
+```

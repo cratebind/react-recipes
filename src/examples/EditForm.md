@@ -22,13 +22,23 @@ const MyForm = () => {
   );
 };
 
+console.log(MyForm)
+
 function Example() {
-  const [key, setKey] = useState('Item 1');
-  const options = ['Item 1', 'Item 2', 'Item 3'];
+  const [key, setKey] = useState('User 1');
+  const options = ['User 1', 'User 2', 'User 3'];
   return (
     <div className="App">
+      <p>
+        Try entering a value into the form below and then changing the key above
+      </p>
+
+      <p>
+        The state should be cleared, because the changing "key" tells React that the state should not be persisted
+      </p>
+
       <div className="form-group">
-        Key:
+        Users:
         <div className="btn-group">
 
           {options.map((val) => (
@@ -37,14 +47,7 @@ function Example() {
         </div>
       </div>
 
-      <p>Active Key: {key}</p>
-
-      <p>
-        Try entering a value into the form below and then changing the key above
-      </p>
-
-      <p>The state should be cleared, because the changing "key" tells React that the state should not be persisted
-      </p>
+      <p>Editing: {key}</p>
 
       {/*
         By giving this form a `key` prop, any change in the key will reset the
@@ -57,7 +60,8 @@ function Example() {
         This can be useful when using one form component to edit multiple items in a list.
       */}
       {/*
-        If you pass the item's ID to it as a key, it will reset the state if the item you're editing changes.
+        If you pass the item's ID to it as a key,
+        it will reset the state if the item you're editing changes.
       */}
     </div>
   );

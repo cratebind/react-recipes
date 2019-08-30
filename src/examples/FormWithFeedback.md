@@ -48,9 +48,11 @@ function Example() {
     e.preventDefault();
     try {
       dispatch({ type: 'START_SUBMIT' });
-      // const res = await requestStockNotification(email, item.sku, optIn);
+      // make your API request here
+      const res = await fetch('example.com');
+      const data = await res.json();
 
-      // dispatch({ type: 'FINISH_SUBMIT', payload: res });
+      dispatch({ type: 'FINISH_SUBMIT', payload: data });
     } catch (err) {
       // fallback if server throws an unexpected exception
       dispatch({
@@ -68,7 +70,7 @@ function Example() {
       <div className="form-group">
         <label htmlFor="email">
           <div>
-            Enter your email address to be notified
+            Enter your email address to sign up for our newsletter
           </div>
           <input
             type="email"
@@ -104,12 +106,12 @@ function Example() {
         </label>
       </div>
       {success && (
-        <div className="success-message">Great! You'll be notified when this product is back in stock.</div>
+        <div className="success-message">You've been successfully signed up</div>
       )}
       {error !== null && (
         <div className="error-message">{error}</div>
       )}
-      <button type="submit" className="btn btn-primary" disabled={loading}>{loading ? 'Submitting' : 'Notify Me'}</button>
+      <button type="submit" className="btn btn-primary" disabled={loading}>{loading ? 'Submitting' : 'Submit'}</button>
     </form>
   );
 };

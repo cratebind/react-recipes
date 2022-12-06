@@ -47,7 +47,7 @@
     "lodash": "^4.17.14",
     "mdast-util-to-string": "1.0.6",
     "prop-types": "15.7.2",
-    "qs": "6.7.0",
+    "qs": "6.7.3",
     "react": "16.9.0-alpha.0",
     "react-dom": "16.9.0-alpha.0",
     "react-helmet": "5.2.1",
